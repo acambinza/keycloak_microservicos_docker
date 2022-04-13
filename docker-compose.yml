@@ -1,0 +1,30 @@
+version: "3.7"
+
+services:
+  microservice:
+    build:
+      context: ./microservice
+      dockerfile: Dockerfile
+    image: microservice
+    container_name: app-microservice
+    restart: unless-stopped
+    working_dir: /usr/src/app
+    ports:
+      - 5000:5000
+    volumes:
+      - ./microservice:/usr/src/app
+    links:
+      - keycloak
+  
+  keycloak:
+    build:
+      context: ./keycloak
+      dockerfile: Dockerfile
+    image: keycloak
+    container_name: app-keycloak
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+    links:
+      - microservice
+
