@@ -27,4 +27,7 @@ services:
       - 8080:8080
     links:
       - microservice
+    environment:
+      - KEYCLOAK_ADMIN=Admin
+      - KEYCLOAK_ADMIN_PASSWORD=Admin
 
