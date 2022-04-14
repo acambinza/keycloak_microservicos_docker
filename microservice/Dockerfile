@@ -1,18 +1,10 @@
-FROM node:v16.13.1
+FROM node:16.13.1
 
-WORKDIR /usr/src/app
-
-COPY package*.json ./
-
-RUN yarn install
-
-RUN apt-get -y install nano
+WORKDIR /home/app
 
 COPY . .
 
-EXPOSE 5000
-
+RUN yarn install
 
 RUN yarn dev
 
-CMD [ "yarn", "server.ts" ]
