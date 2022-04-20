@@ -11,7 +11,7 @@ const memoryStore = new session.MemoryStore();
 
 const config : KeycloakConnect.KeycloakConfig = {
     realm: 'Cetim-Auth',
-    "auth-server-url":"http://localhost:8090/auth",
+    "auth-server-url":"http://localhost:8000/auth",
     resource: 'colab-auth'  ,
     "confidential-port":0,
     "ssl-required":"external"
