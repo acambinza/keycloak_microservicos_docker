@@ -4,8 +4,11 @@ import routes from './routes';
 import {keycloak, memoryStore} from './keycloak';
 import session from 'express-session';
 
+import cors from 'cors';
+
 const app = express()
 
+app.use(cors());
 
 app.use(
     session({

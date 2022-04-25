@@ -10,9 +10,9 @@ KeycloakConnect.prototype.accessDenied = (req, res) => {
 const memoryStore = new session.MemoryStore();
 
 const config : KeycloakConnect.KeycloakConfig = {
-    realm: 'Cetim-Auth',
+    realm: 'CETIM-AUTH',
     "auth-server-url":"http://localhost:8000/auth",
-    resource: 'colab-auth'  ,
+    resource: 'colab-v2',
     "confidential-port":0,
     "ssl-required":"external"
 }
